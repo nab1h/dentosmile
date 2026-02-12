@@ -27,7 +27,7 @@ class HomeController extends Controller
         $awards = Award::all();
         $links = Link::all();
         $cvFile = CvFile::latest()->first();
-        return view('hero', compact(
+        return view('index', compact(
             'settings',
             'projects',
             'experiences',
