@@ -1,62 +1,37 @@
-<section id="about" class="s-about target-section" >
-    <div class="row s-about__content">
-        <div class="column xl-12">
-            <div class="section-header" data-num="01">
-                <h2 class="text-display-title">About Me.</h2>
-            </div> <!-- end section-header -->
-            <p class="attention-getter">
-                {{ $settings['about'] ?? '' }}
-            </p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="grid-list-items s-about__blocks">
-
-                <div class="grid-list-items__item s-about__block">
-                    <h4 class="s-about__block-title">Experience</h4>
-                    <ul class="s-about__list">
-                        @foreach ($experiences as $experience)
-                            <li>
-                                {{ $experience->company ?? '' }}
-                                <span>{{ $experience->title ?? '' }}</span>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div> <!--end s-about__block -->
-                <div class="grid-list-items__item s-about__block">
-                    <h4 class="s-about__block-title">Awards</h4>
-                    <ul class="s-about__list">
-                        @forelse ($awards as $award)
-                            <li>
-                                <a href="#0">
-                                    {{ $award->name }}
-                                    <span>{{ $award->issuer ?: 'N/A' }}</span>
-                                </a>
-                            </li>
-                        @empty
-                            <li>
-                                <td colspan="5" class="text-center">No awards found.</td>
-                            </li>
-                        @endforelse
-                    </ul>
-                </div> <!--end s-about__block -->
-                <div class="grid-list-items__item s-about__block">
-                    <h4 class="s-about__block-title">Skills</h4>
-
-                    <ul class="s-about__list">
-                        @forelse ($skills as $skill)
-                            <li>
-                                {{ $skill->name }}
-                            </li>
-                        @empty
-                            <li>
-                                <td colspan="4" class="text-center">No skills found.</td>
-                            </li>
-                        @endforelse
-                    </ul>
-                </div> <!--end s-about__block -->
-            </div> <!-- grid-list-items -->
-        </div> <!--end column -->
-    </div> <!--end s-about__content -->
-</section> <!-- end s-about -->
+<!-- Start home-about Area -->
+<section class="home-about-area section-gap relative">
+    <div class="container">
+        <div class="row align-items-center justify-content-start">
+            <div class="col-lg-6 no-padding home-about-right">
+                <h1 class="text-white text-al">
+                    بسم الله <br>
+                    بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                </h1>
+                <p class="text-al">
+                    بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                </p>
+                <div class="row no-gutters">
+                    <div class="single-services col text-al">
+                        <span class="lnr lnr-diamond"></span>
+                        <a href="#">
+                            <h4 class="text-white">بسم الله</h4>
+                        </a>
+                        <p>
+                            بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                        </p>
+                    </div>
+                    <div class="single-services col text-al">
+                        <span class="lnr lnr-phone"></span>
+                        <a href="#">
+                            <h4 class="text-white">بسم الله</h4>
+                        </a>
+                        <p>
+                            بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End home-about Area -->
