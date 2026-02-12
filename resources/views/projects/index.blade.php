@@ -24,11 +24,11 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Brand</th>
-                  <th>logo Brand</th>
+                  <!-- <th>Brand</th> -->
+                  <!-- <th>logo Brand</th> -->
                   <th>Photos</th>
                   <th>Description</th>
-                  <th>Created At</th>
+                  <!-- <th>Created At</th> -->
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -37,23 +37,23 @@
                         <tr>
                           <td>{{ $project->id }}</td>
                           <td>{{ $project->name }}</td>
-                          <td>{{ $project->brand_name }}</td>
-                          <td><img src="{{ asset('storage/' . $project->photo_brand) }}" class="img-fluid rounded"
-                              alt="{{ $project->brand_name }}" width="60" height="60"></td>
+                          <!-- <td>{{ $project->brand_name }}</td> -->
+                          <!-- <td><img src="{{ asset('storage/' . $project->photo_brand) }}" class="img-fluid rounded"
+                              alt="{{ $project->brand_name }}" width="60" height="60"></td> -->
                           <td>
                             <img src="{{ asset('storage/' . $project->photo_1) }}" class="img-fluid rounded"
                               alt="{{ $project->name }}" width="60" height="60">
-                            <img src="{{ asset('storage/' . $project->photo_2) }}" class="img-fluid rounded"
+                            <!-- <img src="{{ asset('storage/' . $project->photo_2) }}" class="img-fluid rounded"
                               alt="{{ $project->name }}" width="60" height="60">
                             <img src="{{ asset('storage/' . $project->photo_3) }}" class="img-fluid rounded"
-                              alt="{{ $project->name }}" width="60" height="60">
+                              alt="{{ $project->name }}" width="60" height="60"> -->
                           </td>
 
                           <td>
-                            {{ Str::limit($project->description, 100) }}
+                            {{ Str::limit($project->description, 200) }}
                           </td>
 
-                          <td>{{ $project->created_at }}</td>
+                          <!-- <td>{{ $project->created_at }}</td> -->
 
                           <td class="text-center" style="width: 200px;">
 

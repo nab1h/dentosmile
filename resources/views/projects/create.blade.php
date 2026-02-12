@@ -21,14 +21,14 @@
                                 </div>
                             @endif
                             <div class="mb-3">
-                                <label for="name" class="form-label">Project Name <span class="text-danger">*</span></label>
+                                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="brand_name" class="form-label">Brand Name <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="brand_name" name="brand_name" required>
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description and Key Results <span
                                         class="text-danger">*</span></label>
@@ -37,24 +37,24 @@
                             </div>
                             <hr class="my-4">
                             <h5 class="mb-3">Project Media</h5>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="photo_brand" class="form-label">Brand Logo Image</label>
                                 <input class="form-control" type="file" id="photo_brand" name="photo_brand">
                                 <div class="form-text">Accepted formats: JPG, PNG, SVG (Optional).</div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="photo_1" class="form-label">Project Photo 1</label>
+                                    <label for="photo_1" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="photo_1" name="photo_1">
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <!-- <div class="col-md-4 mb-3">
                                     <label for="photo_2" class="form-label">Project Photo 2</label>
                                     <input class="form-control" type="file" id="photo_2" name="photo_2">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="photo_3" class="form-label">Project Photo 3</label>
                                     <input class="form-control" type="file" id="photo_3" name="photo_3">
-                                </div>
+                                </div> -->
                             </div>
                             <br>
                             <div class="d-grid mt-4">

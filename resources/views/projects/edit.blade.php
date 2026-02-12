@@ -17,12 +17,12 @@
                                 <input type="text" class="form-control" id="name" name="name"
                                     value="{{ old('name', $project->name) }}" required>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="brand_name" class="form-label">Brand Name <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="brand_name" name="brand_name"
                                     value="{{ old('brand_name', $project->brand_name) }}" required>
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description and Key Results <span
                                         class="text-danger">*</span></label>
@@ -30,8 +30,8 @@
                                     placeholder="Describe the work and the achieved results...">{{ old('description', $project->description) }}</textarea>
                             </div>
                             <hr class="my-4">
-                            <h5 class="mb-3">Project Media</h5>
-                            <div class="mb-3">
+                            <!-- <h5 class="mb-3">Project Media</h5> -->
+                            <!-- <div class="mb-3">
                                 <label for="photo_brand" class="form-label">Brand Logo Image</label>
                                 @if($project->photo_brand)
                                     <div class="mb-2">
@@ -42,11 +42,11 @@
                                 <br>
                                 <input class="form-control" type="file" id="photo_brand" name="photo_brand">
                                 <div class="form-text">Accepted formats: JPG, PNG, SVG (Optional).</div>
-                            </div>
+                            </div> -->
                             <br>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="photo_1" class="form-label">Project Photo 1</label>
+                                    <label for="photo_1" class="form-label">Image</label>
                                     @if($project->photo_1)
                                         <div class="mb-2">
                                             <img src="{{ asset('storage/' . $project->photo_1) }}" class="img-thumbnail"
@@ -55,7 +55,7 @@
                                     @endif
                                     <input class="form-control" type="file" id="photo_1" name="photo_1">
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <!-- <div class="col-md-4 mb-3">
                                     <label for="photo_2" class="form-label">Project Photo 2</label>
                                     @if($project->photo_2)
                                         <div class="mb-2">
@@ -64,8 +64,8 @@
                                         </div>
                                     @endif
                                     <input class="form-control" type="file" id="photo_2" name="photo_2">
-                                </div>
-                                <div class="col-md-4 mb-3">
+                                </div> -->
+                                <!-- <div class="col-md-4 mb-3">
                                     <label for="photo_2" class="form-label">Project Photo 3</label>
                                     @if($project->photo_3)
                                         <div class="mb-2">
@@ -74,7 +74,7 @@
                                         </div>
                                     @endif
                                     <input class="form-control" type="file" id="photo_3" name="photo_3">
-                                </div>
+                                </div> -->
                             </div>
                             <br>
                             <br>
