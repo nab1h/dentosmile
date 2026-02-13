@@ -24,10 +24,10 @@ class ProjectsController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'brand_name' => 'required|string|max:255',
+            'brand_name' => 'string|max:255',
             'description' => 'required|string',
             'photo_brand' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000', // 2MB
-            'photo_1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'photo_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'photo_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -52,10 +52,10 @@ class ProjectsController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'brand_name' => 'required|string|max:255',
+            'brand_name' => 'string|max:255',
             'description' => 'required|string',
             'photo_brand' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
-            'photo_1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
+            'photo_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5000',
             'photo_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
             'photo_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
         ]);
