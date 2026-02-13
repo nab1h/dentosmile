@@ -128,8 +128,21 @@ h6 {
 .text-al{
   text-align: start !important;
 }
+.img-sev{
+  width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+.single-service {
+    /* بما إنك عملت dir="rtl" في الـ html فالـ direction هنا اختيارية */
+    text-align: right; /* لإجبار الكلام يروح يمين حتى لو الثيم بيجبره يروح شمال */
+}
 
-
+.single-service h4, 
+.single-service p {
+    text-align: right !important; /* الـ !important بتضمن تخطي أي تنسيقات تانية في الثيم */
+}
 .s-numbers h5 {
     font-weight  : 500;
     margin-top   : 0;

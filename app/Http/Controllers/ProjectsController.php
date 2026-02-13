@@ -46,7 +46,7 @@ class ProjectsController extends Controller
         $project = Project::create($projectData);
 
         return redirect()->route('projects.index')
-            ->with('success', 'تم إضافة المشروع بنجاح إلى البورتفوليو!');
+            ->with('success', 'تم إضافة الخدمة بنجاح !');
     }
     public function update(Request $request, Project $project)
     {
@@ -73,7 +73,7 @@ class ProjectsController extends Controller
         }
         $project->update($dataToUpdate);
         return redirect()->route('projects.index')
-            ->with('success', 'تم تحديث المشروع بنجاح!');
+            ->with('success', 'تم تحديث الخدمه بنجاح!');
     }
     public function destroy(Request $request, Project $project)
     {
@@ -85,7 +85,7 @@ class ProjectsController extends Controller
         }
         $project->delete();
         return redirect()->route('projects.index')
-            ->with('success', 'تم حذف المشروع بنجاح!');
+            ->with('success', 'تم حذف الخدمة بنجاح!');
     }
 }
 
