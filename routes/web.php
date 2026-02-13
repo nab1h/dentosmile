@@ -83,6 +83,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/working-hours/{id}', [WorkingHourController::class, 'update'])->name('working-hours.update');
 
     // Settings
+    // Route::get('/admin', [SettingController::class, 'index'])->name('settings.index');
+    // Route::put('/admin/settings', [SettingController::class, 'update'])->name('settings.update');
+
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
     Route::get('/manage-appointments', [AppointmentController::class, 'index'])->name('booking.index');

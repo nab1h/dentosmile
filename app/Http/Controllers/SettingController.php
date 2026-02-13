@@ -14,8 +14,6 @@ class SettingController extends Controller
     {
         $validated = $request->validate([
             'home' => 'nullable|string',
-            'about' => 'nullable|string',
-            'footer' => 'nullable|string',
         ]);
         foreach ($validated as $key => $value) {
             Setting::updateOrCreate(
