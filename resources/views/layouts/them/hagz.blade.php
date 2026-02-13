@@ -7,7 +7,18 @@
                 <h1 class="text-white">
                     إحجز كشفك
                 </h1>
-                <form class="appoinment-form" id="myForm" action="#">
+                @if(session('success_message'))
+                    <div class="alert shadow-sm d-flex align-items-center" role="alert" dir="rtl"
+                        style="background-color: #e3fcfd; border-right: 5px solid #00d4ff; border-radius: 10px; padding: 20px; text-align: right; margin-bottom: 20px;">
+                        <i class="fa fa-check-circle ms-3" style="color: #00d4ff; font-size: 24px;"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold" style="color: #007bff;">تم بنجاح!</h6>
+                            <span>{{ session('success_message') }}</span>
+                        </div>
+                    </div>
+                @endif
+                <form class="appoinment-form" action="{{ route('booking.store') }}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-12 d-flex flex-column">
                             <input name="patient-name" placeholder="أسمك المريض" onfocus="this.placeholder = ''"
@@ -43,5 +54,20 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    @if(session('success_message'))
+        <script>
+            Swal.fire({
+                title: 'شكراً لك!',
+                text: "{{ session('success_message') }}",
+                icon: 'success',
+                confirmButtonText: 'حسناً',
+                confirmButtonColor: '#007bff'
+            });
+        </script>
+    @endif
 </section>
 <!-- End appoinment Area -->
+
+

@@ -2,10 +2,10 @@
 @section('title', 'Manage Statistics')
 
 @section('content')
-    <div class="container">
+    <div class="containe">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Website Statistics Management</h2>
-            <a href="{{ route('statistics.create') }}" class="btn btn-primary">Add New Statistic</a>
+            <!-- <a href="{{ route('statistics.create') }}" class="btn btn-primary">Add New Statistic</a> -->
         </div>
 
         @if (session('success'))
@@ -31,12 +31,7 @@
                             <td>{{ $stat->value }}</td>
                             <td>{{ Str::limit($stat->description, 50) }}</td>
                             <td>
-                                <a href="{{ route('statistics.edit', $stat->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                <form action="{{ route('statistics.destroy', $stat->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
+                                <a href="{{ route('statistics.edit', $stat->id) }}" class="btn btn-sm btn-info w-100">Edit</a>
                             </td>
                         </tr>
                     @empty
@@ -57,8 +52,8 @@
         <h2>Customer Testimonials Management</h2>
         <a href="{{ route('testimonials.create') }}" class="btn btn-primary">Add New Testimonial</a>
     </div>
-
-    {{-- رسالة النجاح الخاصة بـ Testimonials --}}
+    <br>
+    <br>
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif

@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\CvFileController;
 use App\Http\Controllers\WorkingHourController;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,8 +85,10 @@ Route::middleware('auth')->group(function () {
     // Settings
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
+    Route::get('/manage-appointments', [AppointmentController::class, 'index'])->name('booking.index');
+    Route::delete('/manage-appointments/{id}', [AppointmentController::class, 'destroy'])->name('booking.destroy');
 });
 Route::get('admin/cv_files/download', [CvFileController::class, 'download'])->name('cv_file.download');
-
+Route::post('/appointments/store', [AppointmentController::class, 'store'])->name('booking.store');
 Route::post('/contact', [HomeController::class, 'sendMessage'])
     ->name('contact.send');
