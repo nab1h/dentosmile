@@ -13,6 +13,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\CvFileController;
+use App\Http\Controllers\WorkingHourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/skills', SkillController::class)->names('skills');
     Route::resource('admin/statistics', StatisticController::class)->names('statistics');
     Route::resource('admin/testimonials', TestimonialController::class)->names('testimonials');
+    Route::get('/working-hours', [WorkingHourController::class, 'index'])->name('working-hours.index');
+    Route::post('/working-hours', [WorkingHourController::class, 'store'])->name('working-hours.store');
+    Route::put('/working-hours/{id}', [WorkingHourController::class, 'update'])->name('working-hours.update');
 
     // Settings
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
@@ -83,6 +87,6 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('admin/cv_files/download', [CvFileController::class, 'download'])->name('cv_file.download');
 
-
 Route::post('/contact', [HomeController::class, 'sendMessage'])
     ->name('contact.send');
+Route::get('/', [WorkingHourController::class, 'showOnWelcome']);

@@ -9,13 +9,24 @@
                 </p>
                 <!-- <a class="open-btn" href="#"> <span class="circle"></span>We are open Now</a> -->
                 <div class="date-list d-flex flex-row justify-content-center">
+                    {{-- العمود الأول: المواعيد --}}
                     <ul class="colm-2">
-                        <li>10:00am to 05:00pm</li>
-                        <li>مغلق</li>
+                        @foreach($workingHours as $hour)
+                            <li>
+                                @if($hour->is_closed)
+                                    مغلق
+                                @else
+                                    {{ $hour->hours_range }}
+                                @endif
+                            </li>
+                        @endforeach
                     </ul>
+                
+                    {{-- العمود الثاني: الأيام --}}
                     <ul class="colm-1">
-                        <li><span>:</span> من السبت الي الخميس</li>
-                        <li><span>:</span> الجمعه</li>
+                        @foreach($workingHours as $hour)
+                            <li><span>:</span> {{ $hour->day_name }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
