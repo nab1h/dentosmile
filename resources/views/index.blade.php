@@ -38,7 +38,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 ">
-						<a href="index.html" class="nn"><img class="log" src="{{ asset('them/img/log.jpg') }}"></a>
+						<a href="#" class="nn"><img class="log" src="{{ asset('them/img/log.jpg') }}"></a>
 					</div>
 
 					<!-- <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
@@ -58,18 +58,19 @@
 			<div class="row align-items-center justify-content-between d-flex">
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li><a href="#">اتصل بي</a></li>
-						<li><a href="#">ساعات العمل </a></li>
-						<li><a href="#">خدماتي</a></li>
-						<li><a href="#">حول</a></li>
-						<li class="menu-active"><a href="#">الصفحة الرئيسية</a></li>
+						<li><a href="#contact">اتصل بي</a></li>
+						<li><a href="#hour">ساعات العمل </a></li>
+						<li><a href="#hagz">حجز</a></li>
+						<li><a href="#service">خدمتنا</a></li>
+						<li><a href="#about">حول</a></li>
+						<li class="menu-active"><a href="#home">الصفحة الرئيسية</a></li>
 					</ul>
 				</nav>
 				<div class="menu-social-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href="{{ $links->where('name', 'facebook')->first()->url ?? '#' }}"><i class="fa fa-facebook"></i></a>
+					<a href="{{ $links->where('name', 'twiter')->first()->url ?? '#' }}"><i class="fa fa-twitter"></i></a>
+					<a href="{{ $links->where('name', 'wepsite')->first()->url ?? '#' }}"><i class="fa fa-dribbble"></i></a>
+					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-behance"></i></a>
 				</div>
 			</div>
 		</div>
@@ -95,65 +96,86 @@
 	<footer class="footer-area section-gap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-2  col-md-6">
+				<div class="col-lg-2  col-md-6 text-al">
 					<div class="single-footer-widget">
-						<h6>Top Products</h6>
+						<h6><a href="#home">الصفحة الرئيسية</a></h6>
 						<ul class="footer-nav">
-							<li><a href="#">Managed Website</a></li>
-							<li><a href="#">Manage Reputation</a></li>
-							<li><a href="#">Power Tools</a></li>
-							<li><a href="#">Marketing Service</a></li>
+							<li><a href="#service">خدمتنا</a></li>
+							<li><a href="#hagz">حجز</a></li>
+							<li><a href="#about">حول</a></li>
+							<li><a href="#ask">الأسئلة الشائعة</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-4  col-md-6">
+				<div class="col-lg-4 col-md-6 text-al">
 					<div class="single-footer-widget mail-chimp">
-						<h6 class="mb-20">Contact Us</h6>
+						<h6 class="mb-20">اتصل بنا</h6>
 						<p>
-							56/8, bir uttam qazi nuruzzaman road, west panthapath, kalabagan, Dhanmondi, Dhaka - 1205
+							{{$settings['home']}}
 						</p>
-						<h3>012-6532-568-9746</h3>
-						<h3>012-6532-568-97468</h3>
+						<h3>{{ $links->where('name', 'phone')->first()->url ?? '#' }}</h3>
+						<h3>{{ $links->where('name', 'whats')->first()->url ?? '#' }}</h3>
 					</div>
 				</div>
-				<div class="col-lg-6  col-md-12">
+				<div class="col-lg-6 col-md-12 text-al">
 					<div class="single-footer-widget newsletter">
-						<h6>Newsletter</h6>
-						<p>You can trust us. we only send promo offers, not a single spam.</p>
-						<div id="mc_embed_signup">
-							<form target="_blank" novalidate="true"
-								action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-								method="get" class="form-inline">
-
-								<div class="form-group row" style="width: 100%">
-									<div class="col-lg-8 col-md-12">
-										<input name="EMAIL" placeholder="Your Email Address"
-											onfocus="this.placeholder = ''"
-											onblur="this.placeholder = 'Your Email Address '" required="" type="email">
-										<div style="position: absolute; left: -5000px;">
-											<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-												type="text">
-										</div>
-									</div>
-
-									<div class="col-lg-4 col-md-12">
-										<button class="nw-btn primary-btn">Subscribe<span
-												class="lnr lnr-arrow-right"></span></button>
-									</div>
-								</div>
-								<div class="info"></div>
-							</form>
+						<h6>رأيك يهمنا</h6>
+						<p>نحن نؤمن بأن كل مريض هو فرد من عائلة DentoSmile. رأيك يساعدنا على تقديم رعاية تليق بابتسامتك.</p>
+						<div class="d-flex flex-column">
+							<input type="text" id="contactName" class="transparent-blue-input mb-2 text-white" placeholder="الاسم الكريم" style="background: none !important; border:1px solid #00FFFF; border-radius:10px !important;">
+						
+							<textarea id="contactMessage" rows="3" class="transparent-blue-input mb-3 text-white" placeholder="اكتب رأيك هنا..." style="background: none !important; border:1px solid #00FFFF; border-radius:10px !important;"></textarea>
+						
+							<button type="button" id="submitAjax" class="primary-btn header-btn text-uppercase mt-10">
+								إرسال الآن
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
+			<script>
+				document.getElementById('submitAjax').addEventListener('click', function (e) {
+					e.preventDefault();
+					const name = document.getElementById('contactName').value;
+					const message = document.getElementById('contactMessage').value;
+					console.log("Sending Data:", { name, message });
+					fetch("{{ route('contact.send') }}", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"X-CSRF-TOKEN": "{{ csrf_token() }}",
+							"Accept": "application/json"
+						},
+						body: JSON.stringify({
+							name: name,
+							message: message,
+							job_title: "Client"
+						})
+					})
+						.then(async response => {
+							const data = await response.json();
+							if (!response.ok) {
+								console.error("Server Error:", data);
+								alert("خطأ في البيانات: " + JSON.stringify(data.errors));
+								return;
+							}
+							alert("شكراً لك! تم استلام رأيك بنجاح.");
+							document.getElementById('contactName').value = '';
+							document.getElementById('contactMessage').value = '';
+						})
+						.catch(error => {
+							console.error("Fetch Error:", error);
+							alert("حدث خطأ في الاتصال بالسيرفر");
+						});
+				});
+			</script>
 
 			<div class="row footer-bottom d-flex justify-content-between">
 				<div class="col-lg-12 col-sm-12 footer-social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href="{{ $links->where('name', 'facebook')->first()->url ?? '#' }}"><i class="fa fa-facebook"></i></a>
+					<a href="{{ $links->where('name', 'twiter')->first()->url ?? '#' }}"><i class="fa fa-twitter"></i></a>
+					<a href="{{ $links->where('name', 'wepsite')->first()->url ?? '#' }}"><i class="fa fa-dribbble"></i></a>
+					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-behance"></i></a>
 				</div>
 			</div>
 		</div>

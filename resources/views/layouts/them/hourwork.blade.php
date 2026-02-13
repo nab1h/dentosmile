@@ -1,5 +1,5 @@
 <!-- Start open-hour Area -->
-<section class="open-hour-area">
+<section class="open-hour-area" id="hour">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 open-hour-wrap">

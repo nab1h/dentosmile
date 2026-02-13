@@ -21,7 +21,9 @@ class LinkesController extends Controller
             'pintrest_url' => 'nullable|max:255',
             'wepsite_url' => 'nullable|max:255',
             'linkedin_url' => 'nullable|max:255',
-            'phone_url' => 'nullable|max:11',
+            'phone_url' => 'nullable',
+            'whatsapp_url'=> 'nullable',
+            'addres_url' => 'nullable',
         ]);
         $linkMap = [
             'facebook_url' => 'facebook',
@@ -31,6 +33,8 @@ class LinkesController extends Controller
             'wepsite_url' => 'wepsite',
             'linkedin_url' => 'linkedin',
             'phone_url' => 'phone',
+            'whatsapp_url' => 'whats',
+            'addres_url' => 'address',
         ];
         foreach ($validated as $field => $url) {
             if (isset($linkMap[$field])) {

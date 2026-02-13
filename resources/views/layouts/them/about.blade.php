@@ -1,5 +1,5 @@
 <!-- Start home-about Area -->
-<section class="home-about-area section-gap relative">
+<section class="home-about-area section-gap relative" id="about">
     <div class="container">
         <div class="row align-items-center justify-content-start">
             <div class="col-lg-6 no-padding home-about-right">
