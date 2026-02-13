@@ -1,5 +1,5 @@
 <!-- Start appoinment Area -->
-<section class="appoinment-area section-gap relative">
+<section class="appoinment-area section-gap relative" id="hagz">
     <div class="container">
 
         <div class="row align-items-center justify-content-end">

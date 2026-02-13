@@ -4,14 +4,13 @@
     <div class="container">
         <div class="row fullscreen d-flex justify-content-center align-items-center">
             <div class="banner-content col-lg-9 col-md-12 justify-content-center">
-                <h6 class="text-uppercase">سبحان الله وبحمده</h6>
                 <h1>
-                    بسم الله الرحمن الرحيم
+                    DentoSmile
                 </h1>
-                <p class="text-white mx-auto">
-                    الحمد لله رب العالمين الرحمن الرحيم مالك يوم الدين اياك نعبده واياك نستعين
+                <p class="text-white mx-auto fs-6">
+                {{$settings['home']}}
                 </p>
-                <a href="#form" class="primary-btn header-btn text-uppercase mt-10">احجز معادك</a>
+                <a href="#hagz" class="primary-btn header-btn text-uppercase mt-10">احجز معادك</a>
             </div>
         </div>
     </div>
