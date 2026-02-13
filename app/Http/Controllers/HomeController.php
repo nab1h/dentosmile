@@ -11,7 +11,7 @@ use App\Models\Setting;
 use App\Models\Skill;
 use App\Models\Statistic;
 use App\Models\Testimonial;
-
+use App\Models\WorkingHour;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +27,7 @@ class HomeController extends Controller
         $awards = Award::all();
         $links = Link::all();
         $cvFile = CvFile::latest()->first();
+        $workingHours = WorkingHour::orderBy('sort_order', 'asc')->get();
         return view('index', compact(
             'settings',
             'projects',
@@ -36,7 +37,8 @@ class HomeController extends Controller
             'testimonials',
             'awards',
             'links',
-            'cvFile'
+            'cvFile',
+            'workingHours'
         ));
     }
 

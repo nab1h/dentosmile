@@ -89,4 +89,3 @@ Route::get('admin/cv_files/download', [CvFileController::class, 'download'])->na
 
 Route::post('/contact', [HomeController::class, 'sendMessage'])
     ->name('contact.send');
-Route::get('/', [WorkingHourController::class, 'showOnWelcome']);

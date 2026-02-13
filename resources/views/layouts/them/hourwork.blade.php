@@ -5,12 +5,18 @@
             <div class="col-lg-12 open-hour-wrap">
                 <h1>ساعات العمل</h1>
                 <p>
-                    نحن جاهزين خلال 24 ساعه لخدمتك
+                    يسعدنا استقبالكم في المواعيد التالية
                 </p>
-                <!-- <a class="open-btn" href="#"> <span class="circle"></span>We are open Now</a> -->
                 <div class="date-list d-flex flex-row justify-content-center">
-                    {{-- العمود الأول: المواعيد --}}
-                    <ul class="colm-2">
+                    <ul class="colm-1">
+                        @foreach($workingHours as $hour)
+                            <li>{{ $hour->day_name }}<span>:</span></li>
+                        @endforeach
+                    </ul>
+                    <ul class="colm-1">
+
+                    </ul>
+                    <ul class="colm-2 text-al">
                         @foreach($workingHours as $hour)
                             <li>
                                 @if($hour->is_closed)
@@ -19,13 +25,6 @@
                                     {{ $hour->hours_range }}
                                 @endif
                             </li>
-                        @endforeach
-                    </ul>
-                
-                    {{-- العمود الثاني: الأيام --}}
-                    <ul class="colm-1">
-                        @foreach($workingHours as $hour)
-                            <li><span>:</span> {{ $hour->day_name }}</li>
                         @endforeach
                     </ul>
                 </div>
