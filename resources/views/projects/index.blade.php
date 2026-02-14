@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Projects')
+@section('title', 'My Services')
 @section('content')
   <div class="container mt-4">
     @if(session('success'))
@@ -8,10 +8,10 @@
       </div>
     @endif
     <div class="d-flex justify-content-between align-items-center mb-3 ">
-      <h4>Projects</h4>
+      <h4>My Services</h4>
       <form action="{{ route('projects.create') }}">
         <button class="btn btn-success"">
-                                + Add Project
+                                + Add Service
                               </button>
                               </form>
                             </div>

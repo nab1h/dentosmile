@@ -1,5 +1,5 @@
 <!-- Start appoinment Area -->
-<section class="appoinment-area section-gap relative" id="hagz">
+<section class="appoinment-area section-gap relative" id="hagz" >
     <div class="container">
 
         <div class="row align-items-center justify-content-end">
@@ -21,7 +21,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-lg-12 d-flex flex-column">
-                            <input name="patient-name" placeholder="أسمك المريض" onfocus="this.placeholder = ''"
+                            <input name="patient-name" placeholder="أسمك" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Patient Name'" class="form-control mt-20" required=""
                                 type="text">
                         </div>

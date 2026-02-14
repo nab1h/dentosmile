@@ -38,8 +38,16 @@ body {
     position: relative;
     direction: rtl;
     text-align: left;
-    border: 2px solid red;
     overflow-x: hidden;
+}
+[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* لما الـ JS يشتغل ويضيف الكلاس الخاص به، يبدأ يطبق الأنيميشن */
+html.aos-init [data-aos] {
+    opacity: 0;
 }
 #ask{
     overflow-x: hidden;

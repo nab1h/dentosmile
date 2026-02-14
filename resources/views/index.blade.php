@@ -2,26 +2,39 @@
 <html lang="ar" class="no-js" dir="rtl">
 
 <head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="img/fav.png">
-	<!-- Author Meta -->
-	<meta name="author" content="colorlib">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<title>Dentist</title>
+<link rel="shortcut icon" href="{{ asset('img/fav.png') }}">
+
+<meta name="author" content="DentoSmile">
+
+<meta name="description"
+	content="عيادة DentoSmile لطب وتجميل الأسنان - نقدم أفضل خدمات زراعة الأسنان، التقويم، وتبييض الأسنان بأحدث التقنيات.">
+
+<meta name="keywords" content="دكتورة أسنان، زراعة أسنان، تبييض أسنان، عيادة أسنان في السعودية، حشو عصب">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}?v=1.1">
+<link rel="apple-touch-icon" href="{{ asset('img/favicon.png') }}?v=1.1">
+<link rel="shortcut icon" href="{{ asset('img/favicon.png') }}?v=1.1" type="image/x-icon">
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
+
+
+
+
+<title>عيادة DentoSmile | لابتسامة مثالية</title>
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<!--
 			CSS
 			============================================= -->
+
 	<link rel="stylesheet" href="{{ asset('them/css/linearicons.css') }}">
 	<link rel="stylesheet" href="{{ asset('them/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('them/css/bootstrap.css') }}">
@@ -190,6 +203,7 @@
 	<script src="{{ asset('them/js/jquery.nice-select.min.js') }}"></script>
 	<script src="{{ asset('them/js/mail-script.js') }}"></script>
 	<script src="{{ asset('them/js/main.js') }}"></script>
+	
 </body>
 
 </html>
