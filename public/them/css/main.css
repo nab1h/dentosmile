@@ -41,7 +41,10 @@ body {
     border: 2px solid red;
     overflow-x: hidden;
 }
+#ask{
+    overflow-x: hidden;
 
+}
 .float-left {
     float: right;
 }
@@ -151,7 +154,7 @@ h6 {
 
 .counter-items__item {
     flex: none;
-    width: 50%;
+    /* width: 50%; */
     margin-bottom: 5px;
 }
 

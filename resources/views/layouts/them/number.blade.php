@@ -9,9 +9,9 @@
                 </div>
             </div>
         </div>
-        <div class="row counter-items mb-50">
+        <div class="row counter-items mb-50" dir="rtl">
             @forelse ($statistics as $stat)
-                <div class="col-lg-6 col-md-12 counter-items__item d-flex flex-column justify-content-start gap-4">
+                <div class="col-lg-6 col-md-12 counter-items__item d-flex flex-column text-right mb-5">
                     <div class="num my-3">
                         {{ $stat->value }}
                         <span>+</span>
