@@ -18,6 +18,7 @@
 	<title>Dentist</title>
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<!--
 			CSS
 			============================================= -->
@@ -40,17 +41,6 @@
 					<div class="col-12 ">
 						<a href="#" class="nn"><img class="log" src="{{ asset('them/img/log.jpg') }}"></a>
 					</div>
-
-					<!-- <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-								<a class="btns" href="tel:+953 012 3654 896">+953 012 3654 896</a>
-				  				<a class="btns" href="mailto:support@colorlib.com">support@colorlib.com</a>		
-				  				<a class="icons" href="tel:+953 012 3654 896">
-				  					<span class="lnr lnr-phone-handset"></span>
-				  				</a>
-				  				<a class="icons" href="mailto:support@colorlib.com">
-				  					<span class="lnr lnr-envelope"></span>
-				  				</a>		
-				  			</div> -->
 				</div>
 			</div>
 		</div>
@@ -59,6 +49,7 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li><a href="#contact">اتصل بي</a></li>
+						<li><a href="#ask">الأسئلة الشائعة</a></li>
 						<li><a href="#hour">ساعات العمل </a></li>
 						<li><a href="#hagz">حجز</a></li>
 						<li><a href="#service">خدمتنا</a></li>
@@ -87,7 +78,7 @@
 	@include('layouts.them.number');
 	@include('layouts.them.hagz');
 	@include('layouts.them.testomial');
-
+	@include('layouts.them.ask');
 
 
 

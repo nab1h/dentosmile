@@ -3,7 +3,8 @@
 	<div class="container">
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-12 pb-40 header-text text-center">
-				<h1 class="pb-10">خدماتنا</h1>
+				<h1 class="pb-10" style="color: #0056b3;">خدماتنا</h1>
+				<p class="text-muted">كل ما تود معرفته عن خدماتنا الطبية</p>
 			</div>
 		</div>
 		<div class="row">
@@ -18,7 +19,7 @@
 							{{ Str::limit($project->description, 100) }}
 						</p>
 					</div>
-				</div>
+				</div> 
 			@endforeach
 			
 		</div>

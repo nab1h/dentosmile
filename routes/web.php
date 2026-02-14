@@ -52,7 +52,6 @@ Route::middleware('auth')->group(function () {
 
     // Admin Pages
     Route::get('/admin', [SettingController::class, 'index'])->name('admin.dashboard');
-    // Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
     Route::get('/admin/client', [AdminController::class, 'client'])->name('admin.client');
     Route::get('/admin/cv', [AdminController::class, 'cv'])->name('admin.cv');
 

@@ -19,6 +19,10 @@
                             </div>
                             <br>
                             <br>
+                            <div class="mb-4">
+                                <input class="form-control" id="about" name="about" value="{{$settings['about'] ?? ''}}" style="height: 100px"></input>
+                                @error('about')<div class="text-danger">{{ $message }}</div>@enderror
+                            </div>
                             <div class="text-end">
                                 <button type="submit" class="btn btn-success btn-lg">Update The Clinc</button>
                             </div>

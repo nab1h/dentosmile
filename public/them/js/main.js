@@ -167,17 +167,18 @@ $(document).ready(function() {
 
     //------- Owl Carusel  js --------//  
 
-    $('.active-testimonial-carusel').owlCarousel({
-        items:3,
-        loop:true,
+    $(".active-testimonial-carusel").owlCarousel({
+        items: 3,
+        loop: true,
         margin: 30,
         dots: true,
         autoplayHoverPause: true,
-        smartSpeed:150,         
-        autoplay:true,    
+        smartSpeed: 300,
+        autoplay: true,
+        rtl: true,
         responsive: {
             0: {
-                items: 1
+                items: 1,
             },
             480: {
                 items: 1,
@@ -187,8 +188,8 @@ $(document).ready(function() {
             },
             961: {
                 items: 3,
-            }            
-        }
+            },
+        },
     });
 
 
@@ -369,4 +370,15 @@ $(document).ready(function() {
         $('#mc_embed_signup').find('form').ajaxChimp();
     });
 
+});
+
+$(document).ready(function () {
+    $(".active-testimonial-carusel").owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        nav: true,
+        rtl: true,
+    });
 });

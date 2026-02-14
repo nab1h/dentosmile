@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 open-hour-wrap">
-                <h1>ساعات العمل</h1>
+                <h1 style="color: #0056b3;">ساعات العمل</h1>
                 <p>
                     يسعدنا استقبالكم في المواعيد التالية
                 </p>

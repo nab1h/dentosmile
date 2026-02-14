@@ -4,29 +4,30 @@
         <div class="row align-items-center justify-content-start">
             <div class="col-lg-6 no-padding home-about-right">
                 <h1 class="text-white text-al">
-                    بسم الله <br>
-                    بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                        عن عيادتنا
                 </h1>
                 <p class="text-al">
-                    بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                    {{$settings['about'] ?? ''}}
                 </p>
                 <div class="row no-gutters">
                     <div class="single-services col text-al">
-                        <span class="lnr lnr-diamond"></span>
+                        <span class="lnr lnr-map-marker"></span>
                         <a href="#">
-                            <h4 class="text-white">بسم الله</h4>
+                            <h4 class="text-white">عنوانا</h4>
                         </a>
-                        <p>
-                            بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                        <p class="align-items-center">
+                            {{ $links->where('name', 'address')->first()->url ?? '' }}
                         </p>
                     </div>
                     <div class="single-services col text-al">
                         <span class="lnr lnr-phone"></span>
                         <a href="#">
-                            <h4 class="text-white">بسم الله</h4>
+                            <h4 class="text-white">اتصل بنا</h4>
                         </a>
-                        <p>
-                            بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم
+                        <p class="align-items-center">
+                            {{ $links->where('name', 'phone')->first()->url ?? '' }}
+                            <br>
+                            {{ $links->where('name', 'whats')->first()->url ?? '' }}
                         </p>
                     </div>
                 </div>
