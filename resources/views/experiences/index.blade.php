@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-10 col-lg-11">
-                <h3>Experience Management</h3>
+                <h3>A&Q Management</h3>
                 <p>
                     <a href="{{ route('experiences.create') }}" class="btn btn-success">
                         + Add  Q & A

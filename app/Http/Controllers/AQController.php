@@ -8,7 +8,7 @@ use App\Models\Experience;
 use Illuminate\Http\Request;
 
 
-class ExperiencesController extends Controller
+class experiencesController extends Controller
 {
     public function index()
     {

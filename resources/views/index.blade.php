@@ -108,7 +108,7 @@
 						<h3>{{ $links->where('name', 'whats')->first()->url ?? '#' }}</h3>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12 text-al">
+				<div class="col-lg-6 col-md-12 text-al" id="contact">
 					<div class="single-footer-widget newsletter">
 						<h6>رأيك يهمنا</h6>
 						<p>نحن نؤمن بأن كل مريض هو فرد من عائلة DentoSmile. رأيك يساعدنا على تقديم رعاية تليق بابتسامتك.</p>
