@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Cv')
+@section('title', 'A & Q')
 @section('content')
     <div class="container">
         <div class="row">
@@ -7,7 +7,7 @@
                 <h3>Experience Management</h3>
                 <p>
                     <a href="{{ route('experiences.create') }}" class="btn btn-success">
-                        + Add New Experience
+                        + Add  Q & A
                     </a>
                 </p>
                 @if (session('success'))
@@ -18,9 +18,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Company</th>
-                                <th>Job Title</th>
-                                <th>Duration</th>
+                                <th>Questions</th>
+                                <th>Answers</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -30,10 +29,10 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $experience->company }}</td>
                                     <td>{{ $experience->title }}</td>
-                                    <td>
+                                    <!-- <td>
                                         {{ \Carbon\Carbon::parse($experience->start_date)->format('Y/m') }} -
                                         {{ $experience->end_date ? \Carbon\Carbon::parse($experience->end_date)->format('Y/m') : 'Current' }}
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <a href="{{ route('experiences.edit', $experience->id) }}"
                                             class="btn btn-sm btn-info">Edit</a>
@@ -49,7 +48,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="card mb-4">
+                    <!-- <div class="card mb-4">
                         <div class="card-header">
                             <h4 class="mb-0">Upload CV File (PDF)</h4>
                         </div>
@@ -93,8 +92,8 @@
                 </div>
             </div>
         </div>
-        <hr class="my-5">
-        <div class="row mt-5">
+        <hr class="my-5"> -->
+        <!-- <div class="row mt-5">
             <div class="col-lg-11 col-12">
                 <h3>Awards Management</h3>
                 @if (session('award_success'))
@@ -246,7 +245,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     </div>
 @endsection
