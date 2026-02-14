@@ -7,7 +7,7 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $settings = Setting::pluck('value', 'key');
+        $settings = Setting::pluck('value', 'key')->toArray();
         return view('dashboard.index', compact('settings'));
     }
     public function update(Request $request)

@@ -51,7 +51,8 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     // Admin Pages
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
+    Route::get('/admin', [SettingController::class, 'index'])->name('admin.dashboard');
+    // Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
     Route::get('/admin/client', [AdminController::class, 'client'])->name('admin.client');
     Route::get('/admin/cv', [AdminController::class, 'cv'])->name('admin.cv');
 
@@ -85,7 +86,6 @@ Route::middleware('auth')->group(function () {
     // Settings
     // Route::get('/admin', [SettingController::class, 'index'])->name('settings.index');
     // Route::put('/admin/settings', [SettingController::class, 'update'])->name('settings.update');
-
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
     Route::get('/manage-appointments', [AppointmentController::class, 'index'])->name('booking.index');

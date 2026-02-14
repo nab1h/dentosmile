@@ -14,7 +14,7 @@
                             @method('PUT')
                             <div class="mb-4">
                                 <input class="form-control" id="home" name="home"
-                                    value="{{$settings['home'] ?? ''}}" style="height: 100px">{{$settings['home'] ?? ''}}</input>
+                                    value="{{$settings['home'] ?? ''}}" style="height: 100px"></input>
                                 @error('home')<div class="text-danger">{{ $message }}</div>@enderror
                             </div>
                             <br>
