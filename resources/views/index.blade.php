@@ -60,8 +60,8 @@
 				<div class="menu-social-icons">
 					<a href="{{ $links->where('name', 'facebook')->first()->url ?? '#' }}"><i class="fa fa-facebook"></i></a>
 					<a href="{{ $links->where('name', 'twiter')->first()->url ?? '#' }}"><i class="fa fa-twitter"></i></a>
-					<a href="{{ $links->where('name', 'wepsite')->first()->url ?? '#' }}"><i class="fa fa-dribbble"></i></a>
-					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-behance"></i></a>
+					<a href="{{ $links->where('name', 'linkedin')->first()->url ?? '#' }}"><i class="fa fa-linkedin"></i></a>
+					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>
@@ -165,8 +165,8 @@
 				<div class="col-lg-12 col-sm-12 footer-social">
 					<a href="{{ $links->where('name', 'facebook')->first()->url ?? '#' }}"><i class="fa fa-facebook"></i></a>
 					<a href="{{ $links->where('name', 'twiter')->first()->url ?? '#' }}"><i class="fa fa-twitter"></i></a>
-					<a href="{{ $links->where('name', 'wepsite')->first()->url ?? '#' }}"><i class="fa fa-dribbble"></i></a>
-					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-behance"></i></a>
+					<a href="{{ $links->where('name', 'linkedin')->first()->url ?? '#' }}"><i class="fa fa-linkedin"></i></a>
+					<a href="{{ $links->where('name', 'instagram')->first()->url ?? '#' }}"><i class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>

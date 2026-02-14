@@ -158,6 +158,95 @@ h6 {
     margin-bottom: 5px;
 }
 
+
+.whatsapp-circle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #0056b3;
+    color: #fff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.25);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-circle:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px);
+    box-shadow: 2px 8px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.call-circle {
+    position: fixed;
+    bottom: 100px; /* مكانه فوق زر الواتساب بـ 70 بكسل تقريباً */
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.25);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.call-circle:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 2px 8px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .call-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 85px;
+        right: 20px;
+    }
+}
+
+
+
+.counter-items { 
+        display: flex; 
+        flex-wrap: wrap; 
+    }
+    
+.single-testimonial.item {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* بيجبر الكارد ياخد طول الصف */
+        justify-content: space-between; /* بيوزع العناصر بانتظام */
+    }
+
+.single-testimonial .desc {
+        flex-grow: 1;
+    }
+
+
+
 .counter-items .num {
     display: inline-flex;
     align-items: center;
@@ -2301,21 +2390,25 @@ body.mobile-nav-active #mobile-nav-toggle {
     text-align: center;
     padding: 30px;
     border-radius: 10px;
-    text-align: center;
     border: 1px solid #eee;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.single-testimonial .desc {
+    padding: 30px 0px;
+    flex-grow: 1; 
 }
 .single-testimonial h4 {
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-}
-.single-testimonial .desc {
-    padding: 30px 0px;
+    margin-top: auto;
 }
 .single-testimonial:hover {
     cursor: pointer;

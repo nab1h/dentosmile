@@ -9,26 +9,26 @@
             <div class="col-lg-8">
                 <div class="accordion" id="faqAccordion">
         
+                @foreach ($experiences as $experience)
                     <div class="card border-0 mb-3 shadow-sm rounded">
                         <div class="card-header bg-white border-0 p-0" id="headingOne">
                             <h2 class="mb-0">
                                 <button class="btn btn-link btn-block text-right fw-bold py-3 px-4 shadow-none" type="button"
-                                    data-toggle="collapse" data-target="#faq1" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#faq{{ $experience->id ?? '' }}" aria-expanded="true"
                                     style="color: #0056b3; text-decoration: none;">
                                     <i class="fas fa-question-circle ml-2"></i>
-                                    هل يتم تعقيم الأدوات بشكل دوري لضمان سلامة المرضى؟
+                                    {{ $experience->company ?? '' }}
                                 </button>
                             </h2>
-                        </div>
-        
-                        <div id="faq1" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        </div>                
+                        <div id="faq{{ $experience->id ?? '' }}" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
                             <div class="card-body text-secondary text-right pt-0 px-4 pb-4"
                                 style="border-right: 5px solid #0056b3;">
-                                <strong>الإجابة:</strong> نتبع أحدث معايير التعقيم العالمية باستخدام أجهزة Autoclave Class B،
-                                ويتم تغليف الأدوات لضمان أقصى درجات الأمان والوقاية.
+                                <strong>الإجابة:</strong> {{ $experience->title ?? '' }}
                             </div>
                         </div>
                     </div>
+                @endforeach
 
 
 
