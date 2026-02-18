@@ -6,6 +6,7 @@
         <li><a href="{{route('admin.linkes') }}"><em class="fa fa-toggle-off">&nbsp;</em> Linkes</a></li>
         <li><a href="{{route('projects.index') }}"><em class="fa fa-clone">&nbsp;</em>My Service</a></li>
         <li><a href="{{route('statistics.index') }}"><em class="fa fa-calendar">&nbsp;</em> My Clients</a></li>
+        <li><a href="{{route('admin.articles.index') }}"><em class="fa fa-file-text">&nbsp;</em> Articles</a></li>
         <li><a href="{{route('experiences.index') }}"><em class="fa fa-calendar">&nbsp;</em>AQ & My Healthcare</a></li>
         <li><a href="{{route('password.form') }}"><em class="fa fa-power-off">&nbsp;</em> Change Password</a></li>
         <li>

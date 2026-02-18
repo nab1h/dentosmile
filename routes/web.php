@@ -12,12 +12,14 @@ use App\Http\Controllers\AwardController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CvFileController;
 use App\Http\Controllers\WorkingHourController;
 use App\Http\Controllers\AppointmentController;
 use App\Models\Link;
 use App\Models\Project;
 use App\Models\Setting;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,37 +40,9 @@ Route::get('/services/{project}', function (Project $project) {
 Route::get('/articles', function () {
     $settings = Setting::pluck('value', 'key');
     $links = Link::all();
-
-    $articles = [
-        [
-            'slug' => 'teeth-whitening',
-            'title' => 'تبييض الأسنان: ما الذي ينفع فعلاً؟',
-            'excerpt' => 'ملخص سريع لأشهر طرق التبييض ومتى تفضل كل طريقة، مع نصائح لتجنب الحساسية.',
-            'category' => 'تجميل',
-            'date' => '2026-02-18',
-        ],
-        [
-            'slug' => 'brushing-mistakes',
-            'title' => 'أخطاء شائعة في تنظيف الأسنان (وتصحيحها)',
-            'excerpt' => 'أخطاء يومية بسيطة قد تؤدي لتسوس أو التهاب لثة، وكيف تعدّل روتينك بسهولة.',
-            'category' => 'عناية يومية',
-            'date' => '2026-02-18',
-        ],
-        [
-            'slug' => 'kids-dental-care',
-            'title' => 'أسنان الأطفال: دليل مختصر للأهل',
-            'excerpt' => 'متى تبدأ زيارة الطبيب؟ وكيف نتعامل مع التسوس المبكر؟ خطوات عملية بدون تعقيد.',
-            'category' => 'أطفال',
-            'date' => '2026-02-18',
-        ],
-        [
-            'slug' => 'kids-dental-care',
-            'title' => 'أسنان الأطفال: دليل مختصر للأهل',
-            'excerpt' => 'متى تبدأ زيارة الطبيب؟ وكيف نتعامل مع التسوس المبكر؟ خطوات عملية بدون تعقيد.',
-            'category' => 'أطفال',
-            'date' => '2026-02-18',
-        ],
-    ];
+    $articles = Article::orderByDesc('published_at')
+        ->orderByDesc('created_at')
+        ->get();
 
     return view('articles.index', compact('settings', 'links', 'articles'));
 })->name('articles.index');
@@ -77,58 +51,7 @@ Route::get('/articles/{slug}', function (string $slug) {
     $settings = Setting::pluck('value', 'key');
     $links = Link::all();
 
-    $articlesBySlug = [
-        'teeth-whitening' => [
-            'slug' => 'teeth-whitening',
-            'title' => 'تبييض الأسنان: ما الذي ينفع فعلاً؟',
-            'category' => 'تجميل',
-            'date' => '2026-02-18',
-            'content' => [
-                'التبييض له أكثر من خيار: في العيادة، في البيت بإشراف الطبيب، أو منتجات تجارية. الفرق الأساسي يكون في الفعالية والأمان ودرجة الحساسية.',
-                'لو عندك حساسية عالية أو حشوات/تركيبات أمامية، الأفضل تستشير الطبيب قبل أي خطوة لأن اللون النهائي قد لا يتطابق مع الحشوات.',
-                'نصيحة سريعة: تجنب الإفراط في التبييض، واهتم بتنظيف لطيف ومعجون مناسب للحساسية بعد الإجراء.',
-            ],
-        ],
-        'brushing-mistakes' => [
-            'slug' => 'brushing-mistakes',
-            'title' => 'أخطاء شائعة في تنظيف الأسنان (وتصحيحها)',
-            'category' => 'عناية يومية',
-            'date' => '2026-02-18',
-            'content' => [
-                'الضغط القوي على الفرشاة قد يجرّح اللثة ويزيد حساسية الأسنان. الأفضل ضغط خفيف وحركات قصيرة.',
-                'نسيان تنظيف خط اللثة أو اللسان يقلل الاستفادة من التفريش. ركّز على الحافة بين السن واللثة.',
-                'الخيط/الفرشاة البينية مهمين: التفريش وحده لا يكفي للمسافات بين الأسنان.',
-            ],
-        ],
-        'kids-dental-care' => [
-            'slug' => 'kids-dental-care',
-            'title' => 'أسنان الأطفال: دليل مختصر للأهل',
-            'category' => 'أطفال',
-            'date' => '2026-02-18',
-            'content' => [
-                'زيارة الأسنان الأولى تكون غالبًا مع أول سنة من العمر أو عند ظهور أول سن، الهدف تعويد الطفل وتقييم بسيط.',
-                'تسوس الرضاعة شائع مع النوم بزجاجة الحليب/العصير. حاول تقلل السكريات ليلًا وتنظف الأسنان بعد الرضاعة.',
-                'اختيار معجون فلورايد بكمية صغيرة جدًا (بحجم حبة رز للأطفال الصغار) يساعد في الوقاية.',
-            ],
-        ],
-        'kids-dental-care' => [
-            'slug' => 'kids-dental-care',
-            'title' => 'أسنان الأطفال: دليل مختصر للأهل',
-            'category' => 'أطفال',
-            'date' => '2026-02-18',
-            'content' => [
-                'زيارة الأسنان الأولى تكون غالبًا مع أول سنة من العمر أو عند ظهور أول سن، الهدف تعويد الطفل وتقييم بسيط.',
-                'تسوس الرضاعة شائع مع النوم بزجاجة الحليب/العصير. حاول تقلل السكريات ليلًا وتنظف الأسنان بعد الرضاعة.',
-                'اختيار معجون فلورايد بكمية صغيرة جدًا (بحجم حبة رز للأطفال الصغار) يساعد في الوقاية.',
-            ],
-        ],
-    ];
-
-    if (!isset($articlesBySlug[$slug])) {
-        abort(404);
-    }
-
-    $article = $articlesBySlug[$slug];
+    $article = Article::where('slug', $slug)->firstOrFail();
 
     return view('articles.show', compact('settings', 'links', 'article'));
 })->name('articles.show');
@@ -187,6 +110,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/skills', SkillController::class)->names('skills');
     Route::resource('admin/statistics', StatisticController::class)->names('statistics');
     Route::resource('admin/testimonials', TestimonialController::class)->names('testimonials');
+    Route::resource('admin/articles', ArticleController::class)->names('admin.articles');
     Route::get('/working-hours', [WorkingHourController::class, 'index'])->name('working-hours.index');
     Route::post('/working-hours', [WorkingHourController::class, 'store'])->name('working-hours.store');
     Route::put('/working-hours/{id}', [WorkingHourController::class, 'update'])->name('working-hours.update');

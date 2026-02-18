@@ -71,21 +71,27 @@
             </div>
 
             <div class="row">
-                @foreach($articles as $article)
+                @forelse($articles as $article)
                     <div class="col-lg-4 col-md-6">
                         <div class="single-service">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <small class="text-muted">{{ $article['date'] }}</small>
-                                <span class="badge badge-info">{{ $article['category'] }}</span>
+                                <small class="text-muted">
+                                    {{ optional($article->published_at)->format('Y-m-d') ?? $article->created_at->format('Y-m-d') }}
+                                </small>
+                                <span class="badge badge-info">{{ $article->category ?? 'بدون تصنيف' }}</span>
                             </div>
-                            <a href="{{ route('articles.show', $article['slug']) }}" class="d-flex align-items-start">
-                                <h4>{{ $article['title'] }}</h4>
+                            <a href="{{ route('articles.show', $article->slug) }}" class="d-flex align-items-start">
+                                <h4>{{ $article->title }}</h4>
                             </a>
-                            <p>{{ $article['excerpt'] }}</p>
-                            <a class="primary-btn text-uppercase mt-10" href="{{ route('articles.show', $article['slug']) }}">اقرأ المقال</a>
+                            <p>{{ $article->excerpt ?: \Illuminate\Support\Str::limit($article->body, 100) }}</p>
+                            <a class="primary-btn text-uppercase mt-10" href="{{ route('articles.show', $article->slug) }}">اقرأ المقال</a>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12 text-center">
+                        <p class="text-muted">لا توجد مقالات متاحة حالياً.</p>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

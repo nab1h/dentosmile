@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="{{ asset('img/favicon.png') }}?v=1.1">
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}?v=1.1" type="image/x-icon">
 
-    <title>{{ $article['title'] }} | مقالات DentoSmile</title>
+    <title>{{ $article->title }} | مقالات DentoSmile</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -65,11 +65,11 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10 pb-20 header-text text-center">
-                    <h1 class="pb-10" style="color: #0056b3;">{{ $article['title'] }}</h1>
+                    <h1 class="pb-10" style="color: #0056b3;">{{ $article->title }}</h1>
                     <p class="text-muted mb-0">
-                        <span>{{ $article['date'] }}</span>
+                        <span>{{ optional($article->published_at)->format('Y-m-d') ?? $article->created_at->format('Y-m-d') }}</span>
                         <span class="mx-2">•</span>
-                        <span>{{ $article['category'] }}</span>
+                        <span>{{ $article->category ?? 'بدون تصنيف' }}</span>
                     </p>
                 </div>
             </div>
@@ -77,9 +77,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="single-service">
-                        @foreach($article['content'] as $paragraph)
-                            <p class="mb-3">{{ $paragraph }}</p>
-                        @endforeach
+                        <p class="mb-3">{!! nl2br(e($article->body)) !!}</p>
 
                         <div class="d-flex justify-content-between align-items-center mt-4">
                             <a class="primary-btn text-uppercase" href="{{ route('articles.index') }}">رجوع للمقالات</a>
