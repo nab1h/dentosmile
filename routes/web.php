@@ -16,6 +16,7 @@ use App\Http\Controllers\CvFileController;
 use App\Http\Controllers\WorkingHourController;
 use App\Http\Controllers\AppointmentController;
 use App\Models\Link;
+use App\Models\Project;
 use App\Models\Setting;
 
 /*
@@ -25,6 +26,14 @@ use App\Models\Setting;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/services/{project}', function (Project $project) {
+    $settings = Setting::pluck('value', 'key');
+    $links = Link::all();
+    $projects = Project::latest()->get();
+
+    return view('services.show', compact('settings', 'links', 'project', 'projects'));
+})->name('services.show');
 
 Route::get('/articles', function () {
     $settings = Setting::pluck('value', 'key');

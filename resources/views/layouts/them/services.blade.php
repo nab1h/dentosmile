@@ -10,15 +10,17 @@
 		<div class="row">
 			@foreach($projects as $project)
 				<div class="col-lg-3 col-md-6">
-					<div class="single-service">
+					<a href="{{ route('services.show', $project) }}"
+					   class="single-service d-block"
+					   style="cursor: pointer; text-decoration: none; color: inherit;">
 						<img class="img-fluid img-sev" src="{{ asset('storage/' . $project->photo_1) }}" alt="{{ $project->brand_name }}">
-						<a href="#" class="d-flex align-items-start">
-							<h4>{{ $project->name }}</h4>
-						</a>
-						<p>
+						<div class="d-flex align-items-start">
+							<h4 class="mb-0">{{ $project->name }}</h4>
+						</div>
+						<p class="mt-2">
 							{{ Str::limit($project->description, 100) }}
 						</p>
-					</div>
+					</a>
 				</div> 
 			@endforeach
 			

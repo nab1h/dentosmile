@@ -66,7 +66,15 @@
 						<li><a href="{{ route('articles.index') }}">المقالات</a></li>
 						<li><a href="#hour">ساعات العمل </a></li>
 						<li><a href="#hagz">حجز</a></li>
-						<li><a href="#service">خدمتنا</a></li>
+						<li class="menu-has-children">
+							<a href="#service">خدماتنا</a>
+							<ul>
+								<li><a href="#service">كل الخدمات</a></li>
+								@foreach($projects as $project)
+									<li><a href="{{ route('services.show', $project) }}">{{ $project->name }}</a></li>
+								@endforeach
+							</ul>
+						</li>
 						<li><a href="#about">حول</a></li>
 						<li class="menu-active"><a href="#home">الصفحة الرئيسية</a></li>
 					</ul>
