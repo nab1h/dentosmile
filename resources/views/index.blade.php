@@ -63,6 +63,7 @@
 					<ul class="nav-menu">
 						<li><a href="#contact">اتصل بي</a></li>
 						<li><a href="#ask">الأسئلة الشائعة</a></li>
+						<li><a href="{{ route('articles.index') }}">المقالات</a></li>
 						<li><a href="#hour">ساعات العمل </a></li>
 						<li><a href="#hagz">حجز</a></li>
 						<li><a href="#service">خدمتنا</a></li>
